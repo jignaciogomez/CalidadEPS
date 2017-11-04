@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Wcfdatos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Wcfdatos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dato" nillable="true" type="tns:Dato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDato" nillable="true" type="tns:ArrayOfDato" />
+  <xs:complexType name="Dato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo_categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo_eps" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="demoninador" type="xs:int" />
+      <xs:element minOccurs="0" name="linkfuente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre_EPS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre_categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomespecifique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomfuente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomidentificador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomservicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numerador" type="xs:int" />
+      <xs:element minOccurs="0" name="resultado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dato" nillable="true" type="tns:Dato" />
+  <xs:complexType name="ArrayOfCargarDatos.CargaDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CargarDatos.CargaDatos" nillable="true" type="tns:CargarDatos.CargaDatos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCargarDatos.CargaDatos" nillable="true" type="tns:ArrayOfCargarDatos.CargaDatos" />
+  <xs:complexType name="CargarDatos.CargaDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CargarDatos.CargaDatos" nillable="true" type="tns:CargarDatos.CargaDatos" />
+  <xs:complexType name="ArrayOfCargaBarra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CargaBarra" nillable="true" type="tns:CargaBarra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCargaBarra" nillable="true" type="tns:ArrayOfCargaBarra" />
+  <xs:complexType name="CargaBarra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nomservicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre_categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resultado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CargaBarra" nillable="true" type="tns:CargaBarra" />
+</xs:schema>
