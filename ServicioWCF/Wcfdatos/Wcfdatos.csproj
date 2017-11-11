@@ -82,7 +82,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\Servicio.pubxml" />
+    <Content Include="Web2.config" />
+    <None Include="Properties\PublishProfiles\WSCalidadEPS - Web Deploy.pubxml" />
+    <None Include="Web2.Debug.config">
+      <DependentUpon>Web2.config</DependentUpon>
+    </None>
+    <None Include="Web2.Release.config">
+      <DependentUpon>Web2.config</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

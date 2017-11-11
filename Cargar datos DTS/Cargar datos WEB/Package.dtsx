@@ -7,27 +7,27 @@
   DTS:CreatorName="Edwin\Edwin1"
   DTS:DTSID="{84979D59-09C1-4049-AE89-50CF35A08078}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="12.0.2569.0"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{B5DBDB44-9FCE-42BB-9FFB-C5243C0918A2}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{480FEAA6-8692-4A1D-AB64-FD0A7E336C87}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+      DTS:refId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{AE28E434-97B5-4D1E-A6EC-52B65BC6ADB9}"
-      DTS:ObjectName="calidadeps.database.windows.net.Calidad.edwin">
+      DTS:ObjectName="calidadeps.database.windows.net.Calidad">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=calidadeps.database.windows.net;User ID=edwin;Initial Catalog=Calidad;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=mciccalidadeps.database.windows.net;User ID=Ignacio;Initial Catalog=Calidad;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqE8HlqN0GUa4L6vsqlH48wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNZNBm0OGgdCh0/CMWo6KgPckuRt9UPkK0OnSiUWWKOQAAAAAOgAAAAAIAACAAAACseX6eEtTNtPUGIZ3WvCcOMVOBwMKuGO0G4znitKnrKiAAAAB5b8UaW5ayYizm3uanraINo7GDuaa9+k//MAhocHp9U0AAAABK0lWObxFtpVoap+qlptlGLlCvjn4pgGX6HOsc+DXtY9nr8Ro7req3yPratKApKeOY2ZKc6I9+3DXSc7tf6ot3</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdea+JWm+tUa8H799Mwt40AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADne8aQJENVPi+7jkLsEwAKsCU7+cx6xQuFPgZfsCpeHAAAAAAOgAAAAAIAACAAAAAcfQYp793K5oomFJWCPHeCFhcYyGeuQR1j6Q4BQRr6lSAAAACJUT5rJ09CpykuMD6eC7I3PxJQ2X2Pdji3Z2PlGob7gUAAAACuS//JqfX2k8uqrB0QrgqYuYp9ZYfXW+ffivSfl3i3XW/TB/0NKlLtRZ08lpnfOFvHp/MzqsoEnsWkJczI32GT</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -54,7 +54,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="codigo"
-              DTS:DTSID="{C561618B-EDC6-416E-A74A-30C3EC277BC0}"
+              DTS:DTSID="{66865EFC-10F2-4CA2-9E86-DD66EB23C32C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -63,7 +63,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ideps"
-              DTS:DTSID="{4FCA42E7-ED4D-4AAB-84B3-88E29D1A71BE}"
+              DTS:DTSID="{E9CDB8D2-7E1D-4DCD-AE38-DF1C4992D6E7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +72,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="eps"
-              DTS:DTSID="{8BAFCAEC-243D-43AF-BFCA-0DFD73BFE50D}"
+              DTS:DTSID="{C0FBC6CA-669C-461F-8E04-A93F6319133D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,7 +81,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nomcategorias"
-              DTS:DTSID="{2AF852C2-DC0A-4606-87B4-036E9C9AACF2}"
+              DTS:DTSID="{013AA7ED-931A-4FBF-AB35-FE8A99BF056F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -90,7 +90,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nomservicio"
-              DTS:DTSID="{59AA805F-CED9-4651-83E4-E25CFBE93F3A}"
+              DTS:DTSID="{AACC18DA-C7C8-4DC2-9AF4-D84EC07E1081}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nomespecifique"
-              DTS:DTSID="{0F61CB7E-9522-44A0-B136-14CE505E2EAE}"
+              DTS:DTSID="{19D90195-F508-4DE5-A11F-CFC486FDAD0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -108,7 +108,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nomindicador"
-              DTS:DTSID="{572DD707-0887-46F5-ABA3-EC7ABA859B29}"
+              DTS:DTSID="{D0453E1D-3284-469E-A644-CF15A1940FA3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="numerador"
-              DTS:DTSID="{99E9A7E1-4B47-4C00-89D4-0F8B41838338}"
+              DTS:DTSID="{8334748B-E1D0-41AE-8301-A55082D5A571}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -126,7 +126,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="denominador"
-              DTS:DTSID="{2C5188F1-8910-487D-998A-DDFEE0F34949}"
+              DTS:DTSID="{6FE964D0-71B0-4811-993E-4BCBD8418B12}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -135,7 +135,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="resultado"
-              DTS:DTSID="{F7C015BE-0617-4487-9002-BDDBBB66D4CD}"
+              DTS:DTSID="{8A262382-8B4A-45AC-8A6F-7F3F9DCAAA21}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -144,7 +144,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nomunidad"
-              DTS:DTSID="{DFFCBA3B-E0D0-4A24-BF33-69DFFA0D8628}"
+              DTS:DTSID="{748864D3-31BF-4DE1-8958-7B12E0DE6A60}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -153,7 +153,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nomfuente"
-              DTS:DTSID="{2FC4BEDE-2918-4B2A-8FDF-97751759D0AB}"
+              DTS:DTSID="{DA6E1F94-D985-4A06-A281-C8A61CA557F4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="linkfuente"
-              DTS:DTSID="{CF6D8F7A-6301-42AD-9B44-66294892744F}"
+              DTS:DTSID="{D7A6392D-AE6E-4235-8856-B82CEF936B94}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -220,7 +220,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -254,8 +254,8 @@
               <connections>
                 <connection
                   refId="Package\Carga archivo\Destination Carga Archivo.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -974,7 +974,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1008,8 +1008,8 @@
               <connections>
                 <connection
                   refId="Package\Inserta Calidad\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1223,7 +1223,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1249,8 +1249,8 @@
               <connections>
                 <connection
                   refId="Package\Inserta Calidad\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1648,7 +1648,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Codigo, max(nomcategorias) as nomcategorias  from [dbo].[Cargue_CalidadSaludEPS] group by Codigo</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select Codigo, max(nomcategorias) as nomcategorias  from [dbo].[Cargue_CalidadSaludEPS] group by Codigo</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1674,8 +1674,8 @@
               <connections>
                 <connection
                   refId="Package\Valida EPS y Categorias\Categorias Cargadas.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1966,7 +1966,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2000,8 +2000,8 @@
               <connections>
                 <connection
                   refId="Package\Valida EPS y Categorias\Destination EPS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2098,7 +2098,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select codigo_eps, MAX(eps) as eps from [dbo].[Cargue_CalidadSaludEPS] group by codigo_eps</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select codigo_eps, MAX(eps) as eps from [dbo].[Cargue_CalidadSaludEPS] group by codigo_eps</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2124,8 +2124,8 @@
               <connections>
                 <connection
                   refId="Package\Valida EPS y Categorias\EPS Cargadas.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2482,7 +2482,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2516,8 +2516,8 @@
               <connections>
                 <connection
                   refId="Package\Valida EPS y Categorias\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2618,7 +2618,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2644,8 +2644,8 @@
               <connections>
                 <connection
                   refId="Package\Valida EPS y Categorias\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3221,7 +3221,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3247,8 +3247,8 @@
               <connections>
                 <connection
                   refId="Package\Valida EPS y Categorias\Source EPS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
-                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad.edwin]"
+                  connectionManagerID="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
+                  connectionManagerRefId="Package.ConnectionManagers[calidadeps.database.windows.net.Calidad]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3426,31 +3426,31 @@
       DTS:To="Package\Inserta Calidad" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="sql12">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Carga archivo"
           TopLeft="45,96" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="160,22" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Inserta Calidad"
           TopLeft="131,226" />
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\Valida EPS y Categorias"
           TopLeft="52,161" />
         <EdgeLayout
@@ -3564,11 +3564,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Carga archivo\Flat File Source"
           TopLeft="44,23" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Carga archivo\Destination Carga Archivo"
           TopLeft="36,96" />
         <EdgeLayout
@@ -3627,11 +3627,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Inserta Calidad\OLE DB Destination"
           TopLeft="30,139" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Inserta Calidad\OLE DB Source"
           TopLeft="18,53" />
         <EdgeLayout
@@ -3703,59 +3703,59 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="107,42"
+          Size="107.2,41.6"
           Id="Package\Valida EPS y Categorias\Sort 1"
           TopLeft="211,108" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Valida EPS y Categorias\Conditional Split 1"
           TopLeft="384,240" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Valida EPS y Categorias\OLE DB Source"
           TopLeft="556,22" />
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\Valida EPS y Categorias\Merge Join 1"
           TopLeft="444,164" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Valida EPS y Categorias\EPS Cargadas"
           TopLeft="36,29" />
         <NodeLayout
-          Size="107,42"
+          Size="107.2,41.6"
           Id="Package\Valida EPS y Categorias\Sort 3"
           TopLeft="549,91" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Valida EPS y Categorias\Conditional Split"
           TopLeft="69,285" />
         <NodeLayout
-          Size="98,42"
+          Size="97.6,41.6"
           Id="Package\Valida EPS y Categorias\Sort"
           TopLeft="34,165" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Valida EPS y Categorias\Merge Join"
           TopLeft="170,211" />
         <NodeLayout
-          Size="107,42"
+          Size="107.2,41.6"
           Id="Package\Valida EPS y Categorias\Sort 2"
           TopLeft="360,103" />
         <NodeLayout
-          Size="132,42"
+          Size="132,41.6"
           Id="Package\Valida EPS y Categorias\Source EPS"
           TopLeft="203,27" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Valida EPS y Categorias\OLE DB Destination"
           TopLeft="374,321" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Valida EPS y Categorias\Destination EPS"
           TopLeft="52,358" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Valida EPS y Categorias\Categorias Cargadas"
           TopLeft="355,24" />
         <EdgeLayout

@@ -1,16 +1,12 @@
 ﻿//CdnPath=http://ajax.aspnetcdn.com/ajax/4.5.1/1/MenuStandards.js
-if (!window.Sys) {
-    window.Sys = {};
-}
-if (!Sys.WebForms) {
-    Sys.WebForms = {};
-}
+if (!window.Sys) { window.Sys = {}; }
+if (!Sys.WebForms) { Sys.WebForms = {}; }
 Sys.WebForms.Menu = function(options) {
     this.items = [];
     this.depth = options.depth || 1;
     this.parentMenuItem = options.parentMenuItem;
     this.element = Sys.WebForms.Menu._domHelper.getElement(options.element);
-    if (this.element.tagName === "DIV") {
+    if (this.element.tagName === 'DIV') {
         var containerElement = this.element;
         this.element = Sys.WebForms.Menu._domHelper.firstChild(containerElement);
         this.element.tabIndex = options.tabIndex || 0;
@@ -18,7 +14,8 @@ Sys.WebForms.Menu = function(options) {
         options.menu = this;
         this.container = new Sys.WebForms._MenuContainer(options);
         Sys.WebForms.Menu._domHelper.setFloat(this.element, this.container.rightToLeft ? "right" : "left");
-    } else {
+    }
+    else {
         this.container = options.container;
         this.keyMap = options.keyMap;
     }
@@ -27,38 +24,41 @@ Sys.WebForms.Menu = function(options) {
         this.parentMenu = this.parentMenuItem.parentMenu;
         this.rootMenu = this.parentMenu.rootMenu;
         if (!this.element.id) {
-            this.element.id = (this.container.element.id || "menu") +
-                ":submenu:" +
-                Sys.WebForms.Menu._elementObjectMapper._computedId;
+            this.element.id = (this.container.element.id || 'menu') + ':submenu:' + Sys.WebForms.Menu._elementObjectMapper._computedId;
         }
         if (this.depth > this.container.staticDisplayLevels) {
             this.displayMode = "dynamic";
             this.element.style.display = "none";
             this.element.style.position = "absolute";
-            if (this.rootMenu && this.container.orientation === "horizontal" && this.parentMenu.isStatic()) {
+            if (this.rootMenu && this.container.orientation === 'horizontal' && this.parentMenu.isStatic()) {
                 this.element.style.top = "100%";
                 if (this.container.rightToLeft) {
                     this.element.style.right = "0px";
-                } else {
+                }
+                else {
                     this.element.style.left = "0px";
                 }
-            } else {
+            }
+            else {
                 this.element.style.top = "0px";
                 if (this.container.rightToLeft) {
                     this.element.style.right = "100%";
-                } else {
+                }
+                else {
                     this.element.style.left = "100%";
                 }
             }
             if (this.container.rightToLeft) {
                 this.keyMap = Sys.WebForms.Menu._keyboardMapping.verticalRtl;
-            } else {
+            }
+            else {
                 this.keyMap = Sys.WebForms.Menu._keyboardMapping.vertical;
             }
-        } else {
+        }
+        else {
             this.displayMode = "static";
             this.element.style.display = "block";
-            if (this.container.orientation === "horizontal") {
+            if (this.container.orientation === 'horizontal') {
                 Sys.WebForms.Menu._domHelper.setFloat(this.element, this.container.rightToLeft ? "right" : "left");
             }
         }
@@ -68,7 +68,7 @@ Sys.WebForms.Menu = function(options) {
     var count = children.length;
     for (var i = 0; i < count; i++) {
         var node = children[i];
-        if (node.nodeType !== 1) {
+        if (node.nodeType !== 1) {   
             continue;
         }
         var topLevelMenuItem = null;
@@ -106,7 +106,7 @@ Sys.WebForms.Menu.prototype = {
     },
     firstChild: function() { return this.items[0]; },
     focus: function() { if (this.container) this.container.focus(); },
-    get_displayed: function() { return this.element.style.display !== "none"; },
+    get_displayed: function() { return this.element.style.display !== 'none'; },
     get_focused: function() {
         if (this.container) {
             return this.container.focused;
@@ -138,16 +138,16 @@ Sys.WebForms.Menu.prototype = {
             if (this.get_focused()) {
                 this.container.navigateTo(this.parentMenuItem);
             }
-            this.element.style.display = "none";
+            this.element.style.display = 'none';
         }
     },
     isRoot: function() { return this.rootMenu === this; },
-    isStatic: function() { return this.displayMode === "static"; },
+    isStatic: function() { return this.displayMode === 'static'; },
     lastChild: function() { return this.items[this.items.length - 1]; },
-    show: function() { this.element.style.display = "block"; }
+    show: function() { this.element.style.display = 'block'; }
 };
 if (Sys.WebForms.Menu.registerClass) {
-    Sys.WebForms.Menu.registerClass("Sys.WebForms.Menu");
+    Sys.WebForms.Menu.registerClass('Sys.WebForms.Menu');
 }
 Sys.WebForms.MenuItem = function(parentMenu, listElement, topLevelMenuItem) {
     this.keyMap = parentMenu.keyMap;
@@ -156,44 +156,36 @@ Sys.WebForms.MenuItem = function(parentMenu, listElement, topLevelMenuItem) {
     this.element = listElement;
     this.topLevelMenuItem = topLevelMenuItem || this;
     this._anchor = Sys.WebForms.Menu._domHelper.firstChild(listElement);
-    while (this._anchor && this._anchor.tagName !== "A") {
+    while (this._anchor && this._anchor.tagName !== 'A') {
         this._anchor = Sys.WebForms.Menu._domHelper.nextSibling(this._anchor);
     }
     if (this._anchor) {
         this._anchor.tabIndex = -1;
         var subMenu = this._anchor;
-        while (subMenu && subMenu.tagName !== "UL") {
+        while (subMenu && subMenu.tagName !== 'UL') {
             subMenu = Sys.WebForms.Menu._domHelper.nextSibling(subMenu);
         }
         if (subMenu) {
-            this.childMenu = new Sys.WebForms.Menu({
-                element: subMenu,
-                parentMenuItem: this,
-                depth: parentMenu.depth + 1,
-                container: this.container,
-                keyMap: this.keyMap
-            });
+            this.childMenu = new Sys.WebForms.Menu({ element: subMenu, parentMenuItem: this, depth: parentMenu.depth + 1, container: this.container, keyMap: this.keyMap });
             if (!this.childMenu.isStatic()) {
-                Sys.WebForms.Menu._domHelper.appendCssClass(this.element, "has-popup");
-                Sys.WebForms.Menu._domHelper.appendAttributeValue(this.element,
-                    "aria-haspopup",
-                    this.childMenu.element.id);
+                Sys.WebForms.Menu._domHelper.appendCssClass(this.element, 'has-popup');
+                Sys.WebForms.Menu._domHelper.appendAttributeValue(this.element, 'aria-haspopup', this.childMenu.element.id);
             }
         }
     }
     Sys.WebForms.Menu._elementObjectMapper.map(listElement, this);
-    Sys.WebForms.Menu._domHelper.appendAttributeValue(listElement, "role", "menuitem");
+    Sys.WebForms.Menu._domHelper.appendAttributeValue(listElement, 'role', 'menuitem');
     Sys.WebForms.Menu._domHelper.appendCssClass(listElement, parentMenu.displayMode);
     if (this._anchor) {
         Sys.WebForms.Menu._domHelper.appendCssClass(this._anchor, parentMenu.displayMode);
     }
     this.element.style.position = "relative";
-    if (this.parentMenu.depth == 1 && this.container.orientation == "horizontal") {
+    if (this.parentMenu.depth == 1 && this.container.orientation == 'horizontal') {
         Sys.WebForms.Menu._domHelper.setFloat(this.element, this.container.rightToLeft ? "right" : "left");
     }
     if (!this.container.disabled) {
-        Sys.WebForms.Menu._domHelper.addEvent(this.element, "mouseover", Sys.WebForms.MenuItem._onmouseover);
-        Sys.WebForms.Menu._domHelper.addEvent(this.element, "mouseout", Sys.WebForms.MenuItem._onmouseout);
+        Sys.WebForms.Menu._domHelper.addEvent(this.element, 'mouseover', Sys.WebForms.MenuItem._onmouseover);
+        Sys.WebForms.Menu._domHelper.addEvent(this.element, 'mouseout', Sys.WebForms.MenuItem._onmouseout);
     }
 };
 Sys.WebForms.MenuItem.prototype = {
@@ -210,8 +202,8 @@ Sys.WebForms.MenuItem.prototype = {
     },
     blur: function() { this.setTabIndex(-1); },
     doDispose: function() {
-        Sys.WebForms.Menu._domHelper.removeEvent(this.element, "mouseover", Sys.WebForms.MenuItem._onmouseover);
-        Sys.WebForms.Menu._domHelper.removeEvent(this.element, "mouseout", Sys.WebForms.MenuItem._onmouseout);
+        Sys.WebForms.Menu._domHelper.removeEvent(this.element, 'mouseover', Sys.WebForms.MenuItem._onmouseover);
+        Sys.WebForms.Menu._domHelper.removeEvent(this.element, 'mouseout', Sys.WebForms.MenuItem._onmouseout);
         if (this.childMenu) {
             this.childMenu.doDispose();
         }
@@ -229,15 +221,16 @@ Sys.WebForms.MenuItem.prototype = {
     highlight: function(highlighting) {
         if (highlighting) {
             this.applyUp(function(menuItem) {
-                    menuItem.parentMenu.parentMenuItem.highlight(true);
-                },
-                function(menuItem) {
-                    return !menuItem.parentMenu.isStatic() && menuItem.parentMenu.parentMenuItem;
-                }
-            );
-            Sys.WebForms.Menu._domHelper.appendCssClass(this._anchor, "highlighted");
-        } else {
-            Sys.WebForms.Menu._domHelper.removeCssClass(this._anchor, "highlighted");
+                menuItem.parentMenu.parentMenuItem.highlight(true);
+            },
+            function(menuItem) {
+                return !menuItem.parentMenu.isStatic() && menuItem.parentMenu.parentMenuItem;
+            }
+        );
+            Sys.WebForms.Menu._domHelper.appendCssClass(this._anchor, 'highlighted');
+        }
+        else {
+            Sys.WebForms.Menu._domHelper.removeCssClass(this._anchor, 'highlighted');
             this.setTabIndex(-1);
         }
     },
@@ -258,7 +251,8 @@ Sys.WebForms.MenuItem.prototype = {
             });
             this.container.hoveredMenuItem = this;
             this.highlight(true);
-        } else {
+        }
+        else {
             var menuItem = this;
             while (menuItem) {
                 menuItem.highlight(false);
@@ -297,21 +291,21 @@ Sys.WebForms.MenuItem.prototype = {
     },
     navigate: function(keyCode) {
         switch (this.keyMap[keyCode]) {
-        case this.keyMap.next:
-            this.navigateNext();
-            break;
-        case this.keyMap.previous:
-            this.navigatePrevious();
-            break;
-        case this.keyMap.child:
-            this.navigateChild();
-            break;
-        case this.keyMap.parent:
-            this.navigateParent();
-            break;
-        case this.keyMap.tab:
-            this.navigateOut();
-            break;
+            case this.keyMap.next:
+                this.navigateNext();
+                break;
+            case this.keyMap.previous:
+                this.navigatePrevious();
+                break;
+            case this.keyMap.child:
+                this.navigateChild();
+                break;
+            case this.keyMap.parent:
+                this.navigateParent();
+                break;
+            case this.keyMap.tab:
+                this.navigateOut();
+                break;
         }
     },
     navigateChild: function() {
@@ -321,8 +315,9 @@ Sys.WebForms.MenuItem.prototype = {
             if (firstChild) {
                 this.container.navigateTo(firstChild);
             }
-        } else {
-            if (this.container.orientation === "horizontal") {
+        }
+        else {
+            if (this.container.orientation === 'horizontal') {
                 var nextItem = this.topLevelMenuItem.nextSibling || this.topLevelMenuItem.parentMenu.firstChild();
                 if (nextItem == this.topLevelMenuItem) {
                     return;
@@ -358,7 +353,7 @@ Sys.WebForms.MenuItem.prototype = {
     },
     navigateParent: function() {
         var parentMenu = this.parentMenu,
-            horizontal = this.container.orientation === "horizontal";
+            horizontal = this.container.orientation === 'horizontal';
         if (!parentMenu) return;
         if (horizontal && this.childMenu && parentMenu.isRoot()) {
             this.navigateChild();
@@ -375,7 +370,8 @@ Sys.WebForms.MenuItem.prototype = {
                 if (previousItem.childMenu) {
                     this.container.navigateTo(previousItem.childMenu.firstChild());
                 }
-            } else {
+            }
+            else {
                 this.parentMenu.hide();
             }
         }
@@ -423,15 +419,16 @@ Sys.WebForms.Menu._domHelper = {
     addEvent: function(element, eventName, fn, useCapture) {
         if (element.addEventListener) {
             element.addEventListener(eventName, fn, !!useCapture);
-        } else {
-            element["on" + eventName] = fn;
+        }
+        else {
+            element['on' + eventName] = fn;
         }
     },
     appendAttributeValue: function(element, name, value) {
-        this.updateAttributeValue("append", element, name, value);
+        this.updateAttributeValue('append', element, name, value);
     },
     appendCssClass: function(element, value) {
-        this.updateClassName("append", element, name, value);
+        this.updateClassName('append', element, name, value);
     },
     appendString: function(getString, setString, value) {
         var currentValue = getString();
@@ -439,11 +436,11 @@ Sys.WebForms.Menu._domHelper = {
             setString(value);
             return;
         }
-        var regex = this._regexes.getRegex("(^| )" + value + "($| )");
+        var regex = this._regexes.getRegex('(^| )' + value + '($| )');
         if (regex.test(currentValue)) {
             return;
         }
-        setString(currentValue + " " + value);
+        setString(currentValue + ' ' + value);
     },
     cancelEvent: function(e) {
         var event = e || window.event;
@@ -455,20 +452,17 @@ Sys.WebForms.Menu._domHelper = {
         }
     },
     contains: function(ancestor, descendant) {
-        for (; descendant && (descendant !== ancestor); descendant = descendant.parentNode) {
-        }
+        for (; descendant && (descendant !== ancestor); descendant = descendant.parentNode) { }
         return !!descendant;
     },
     firstChild: function(element) {
         var child = element.firstChild;
-        if (child && child.nodeType !== 1) {
+        if (child && child.nodeType !== 1) {   
             child = this.nextSibling(child);
         }
         return child;
     },
-    getElement: function(elementOrId) {
-        return typeof elementOrId === "string" ? document.getElementById(elementOrId) : elementOrId;
-    },
+    getElement: function(elementOrId) { return typeof elementOrId === 'string' ? document.getElementById(elementOrId) : elementOrId; },
     getElementDirection: function(element) {
         if (element) {
             if (element.dir) {
@@ -483,38 +477,40 @@ Sys.WebForms.Menu._domHelper = {
         var next = element.nextSibling;
         if (next) {
             element.parentNode.insertBefore(elementToInsert, next);
-        } else if (element.parentNode) {
+        }
+        else if (element.parentNode) {
             element.parentNode.appendChild(elementToInsert);
         }
     },
     nextSibling: function(element) {
         var sibling = element.nextSibling;
         while (sibling) {
-            if (sibling.nodeType === 1) {
+            if (sibling.nodeType === 1) {   
                 return sibling;
             }
             sibling = sibling.nextSibling;
         }
     },
     removeAttributeValue: function(element, name, value) {
-        this.updateAttributeValue("remove", element, name, value);
+        this.updateAttributeValue('remove', element, name, value);
     },
     removeCssClass: function(element, value) {
-        this.updateClassName("remove", element, name, value);
+        this.updateClassName('remove', element, name, value);
     },
     removeEvent: function(element, eventName, fn, useCapture) {
         if (element.removeEventListener) {
             element.removeEventListener(eventName, fn, !!useCapture);
-        } else if (element.detachEvent) {
-            element.detachEvent("on" + eventName, fn);
         }
-        element["on" + eventName] = null;
+        else if (element.detachEvent) {
+            element.detachEvent('on' + eventName, fn)
+        }
+        element['on' + eventName] = null;
     },
     removeString: function(getString, setString, valueToRemove) {
         var currentValue = getString();
         if (currentValue) {
-            var regex = this._regexes.getRegex("(\\s|\\b)" + valueToRemove + "$|\\b" + valueToRemove + "\\s+");
-            setString(currentValue.replace(regex, ""));
+            var regex = this._regexes.getRegex('(\\s|\\b)' + valueToRemove + '$|\\b' + valueToRemove + '\\s+');
+            setString(currentValue.replace(regex, ''));
         }
     },
     setFloat: function(element, direction) {
@@ -522,26 +518,26 @@ Sys.WebForms.Menu._domHelper = {
         element.style.cssFloat = direction;
     },
     updateAttributeValue: function(operation, element, name, value) {
-        this[operation + "String"](
-            function() {
-                return element.getAttribute(name);
-            },
-            function(newValue) {
-                element.setAttribute(name, newValue);
-            },
-            value
-        );
+        this[operation + 'String'](
+                function() {
+                    return element.getAttribute(name);
+                },
+                function(newValue) {
+                    element.setAttribute(name, newValue);
+                },
+                value
+            );
     },
     updateClassName: function(operation, element, name, value) {
-        this[operation + "String"](
-            function() {
-                return element.className;
-            },
-            function(newValue) {
-                element.className = newValue;
-            },
-            value
-        );
+        this[operation + 'String'](
+                function() {
+                    return element.className;
+                },
+                function(newValue) {
+                    element.className = newValue;
+                },
+                value
+            );
     },
     _regexes: {
         getRegex: function(pattern) {
@@ -556,11 +552,11 @@ Sys.WebForms.Menu._domHelper = {
 Sys.WebForms.Menu._elementObjectMapper = {
     _computedId: 0,
     _mappings: {},
-    _mappingIdName: "Sys.WebForms.Menu.Mapping",
+    _mappingIdName: 'Sys.WebForms.Menu.Mapping',
     getMappedObject: function(element) {
         var id = element[this._mappingIdName];
         if (id) {
-            return this._mappings[this._mappingIdName + ":" + id];
+            return this._mappings[this._mappingIdName + ':' + id];
         }
     },
     map: function(element, theObject) {
@@ -568,9 +564,9 @@ Sys.WebForms.Menu._elementObjectMapper = {
         if (mappedObject === theObject) {
             return;
         }
-        var objectId = element[this._mappingIdName] || element.id || "%" + (++this._computedId);
+        var objectId = element[this._mappingIdName] || element.id || '%' + (++this._computedId); 
         element[this._mappingIdName] = objectId;
-        this._mappings[this._mappingIdName + ":" + objectId] = theObject;
+        this._mappings[this._mappingIdName + ':' + objectId] = theObject;
         theObject.mappingId = objectId;
     }
 };
@@ -605,69 +601,64 @@ Sys.WebForms.Menu._keyboardMapping = new (function() {
     this.horizontalRtl[DOWN_ARROW] = this.horizontalRtl.child;
     this.horizontalRtl[UP_ARROW] = this.horizontalRtl.parent;
     this.horizontalRtl[TAB] = this.horizontalRtl[ESCAPE] = this.horizontalRtl.tab;
-    this.horizontal.contains = this.horizontalRtl.contains = this.vertical.contains = this.verticalRtl.contains =
-        function(keycode) {
-            return this[keycode] != null;
-        };
+    this.horizontal.contains = this.horizontalRtl.contains = this.vertical.contains = this.verticalRtl.contains = function(keycode) {
+        return this[keycode] != null;
+    };
 })();
 Sys.WebForms._MenuContainer = function(options) {
     this.focused = false;
     this.disabled = options.disabled;
     this.staticDisplayLevels = options.staticDisplayLevels || 1;
     this.element = options.element;
-    this.orientation = options.orientation || "vertical";
+    this.orientation = options.orientation || 'vertical';
     this.disappearAfter = options.disappearAfter;
-    this.rightToLeft = Sys.WebForms.Menu._domHelper.getElementDirection(this.element) === "rtl";
+    this.rightToLeft = Sys.WebForms.Menu._domHelper.getElementDirection(this.element) === 'rtl';
     Sys.WebForms.Menu._elementObjectMapper.map(this.element, this);
     this.menu = options.menu;
     this.menu.rootMenu = this.menu;
-    this.menu.displayMode = "static";
-    this.menu.element.style.position = "relative";
-    this.menu.element.style.width = "auto";
-    if (this.orientation === "vertical") {
-        Sys.WebForms.Menu._domHelper.appendAttributeValue(this.menu.element, "role", "menu");
+    this.menu.displayMode = 'static';
+    this.menu.element.style.position = 'relative';
+    this.menu.element.style.width = 'auto';
+    if (this.orientation === 'vertical') {
+        Sys.WebForms.Menu._domHelper.appendAttributeValue(this.menu.element, 'role', 'menu');
         if (this.rightToLeft) {
             this.menu.keyMap = Sys.WebForms.Menu._keyboardMapping.verticalRtl;
-        } else {
+        }
+        else {
             this.menu.keyMap = Sys.WebForms.Menu._keyboardMapping.vertical;
         }
-    } else {
-        Sys.WebForms.Menu._domHelper.appendAttributeValue(this.menu.element, "role", "menubar");
+    }
+    else {
+        Sys.WebForms.Menu._domHelper.appendAttributeValue(this.menu.element, 'role', 'menubar');
         if (this.rightToLeft) {
             this.menu.keyMap = Sys.WebForms.Menu._keyboardMapping.horizontalRtl;
-        } else {
+        }
+        else {
             this.menu.keyMap = Sys.WebForms.Menu._keyboardMapping.horizontal;
         }
     }
-    var floatBreak = document.createElement("div");
+    var floatBreak = document.createElement('div');
     floatBreak.style.clear = this.rightToLeft ? "right" : "left";
     this.element.appendChild(floatBreak);
     Sys.WebForms.Menu._domHelper.setFloat(this.element, this.rightToLeft ? "right" : "left");
     Sys.WebForms.Menu._domHelper.insertAfter(this.element, floatBreak);
     if (!this.disabled) {
-        Sys.WebForms.Menu._domHelper.addEvent(this.menu.element, "focus", this._onfocus, true);
-        Sys.WebForms.Menu._domHelper.addEvent(this.menu.element, "keydown", this._onkeydown);
+        Sys.WebForms.Menu._domHelper.addEvent(this.menu.element, 'focus', this._onfocus, true);
+        Sys.WebForms.Menu._domHelper.addEvent(this.menu.element, 'keydown', this._onkeydown);
         var menuContainer = this;
         this.element.dispose = function() {
             if (menuContainer.element.dispose) {
                 menuContainer.element.dispose = null;
-                Sys.WebForms.Menu._domHelper.removeEvent(menuContainer.menu.element,
-                    "focus",
-                    menuContainer._onfocus,
-                    true);
-                Sys.WebForms.Menu._domHelper.removeEvent(menuContainer.menu.element,
-                    "keydown",
-                    menuContainer._onkeydown);
+                Sys.WebForms.Menu._domHelper.removeEvent(menuContainer.menu.element, 'focus', menuContainer._onfocus, true);
+                Sys.WebForms.Menu._domHelper.removeEvent(menuContainer.menu.element, 'keydown', menuContainer._onkeydown);
                 menuContainer.menu.doDispose();
             }
         };
-        Sys.WebForms.Menu._domHelper.addEvent(window,
-            "unload",
-            function() {
-                if (menuContainer.element.dispose) {
-                    menuContainer.element.dispose();
-                }
-            });
+        Sys.WebForms.Menu._domHelper.addEvent(window, 'unload', function() {
+            if (menuContainer.element.dispose) {
+                menuContainer.element.dispose();
+            }
+        });
     }
 };
 Sys.WebForms._MenuContainer.prototype = {

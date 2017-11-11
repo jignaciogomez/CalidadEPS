@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -35,7 +38,9 @@ namespace AplicacionCalidad
                     Value = _antiXsrfTokenValue
                 };
                 if (FormsAuthentication.RequireSSL && Request.IsSecureConnection)
+                {
                     responseCookie.Secure = true;
+                }
                 Response.Cookies.Set(responseCookie);
             }
 
@@ -48,19 +53,22 @@ namespace AplicacionCalidad
             {
                 // Establecer token Anti-XSRF
                 ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
-                ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? string.Empty;
+                ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
             }
             else
             {
                 // Validar el token Anti-XSRF
-                if ((string) ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-                    || (string) ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? string.Empty))
+                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
+                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+                {
                     throw new InvalidOperationException("Error de validación del token Anti-XSRF.");
+                }
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -68,4 +76,5 @@ namespace AplicacionCalidad
             Context.GetOwinContext().Authentication.SignOut();
         }
     }
+
 }

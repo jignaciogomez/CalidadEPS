@@ -17,7 +17,11 @@ namespace Wcfdatos
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
-
+        /// <summary>
+        ///    Envia informacion general la de resultados de estadisticas cargadas
+        /// </summary>
+        /// <param name="EPS">Codigo de la EPS a consultar</param>
+        /// <returns>Lista de datos generales de la  EPS a consultar</returns>
         public List<Dato> ObtenerDatos(string EPS)
         {
 
@@ -62,6 +66,11 @@ namespace Wcfdatos
             }
         }
 
+        /// <summary>
+        ///    Envia informacion general la de resultados de estadisticas cargadas
+        /// </summary>
+        /// <param name="EPS">Codigo de la EPS a consultar</param>
+        /// <returns>Lista de dsubcategorias de la EPS a consultar</returns>
         public List<CargaBarra> Carga_Barra(string EPS)
         {
             string conexion = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString.ToString();
@@ -94,7 +103,11 @@ namespace Wcfdatos
                 throw new ArgumentException(ex.Message);
             }
         }
-
+        /// <summary>
+        ///    Envia informacion general la de resultados de estadisticas cargadas
+        /// </summary>
+        /// <param name="EPS">Codigo de la EPS a consultar</param>
+        /// <returns>Lista de categorias  de la EPS a consultar</returns>
         public List<CargaBarra> Carga_Torta(string EPS)
         {
             string conexion = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString.ToString();
@@ -128,7 +141,11 @@ namespace Wcfdatos
             }
         }
 
-
+        /// <summary>
+        /// Envia informacion general para cargar los dropdownlist
+        /// </summary>
+        /// <param name="Opcion">Codigo de la EPS a consultar</param>
+        /// <returns>Lista de datos para cargar dropdownlist </returns>
         public List<CargarDatos.CargaDatos> CargarObjetos(string Opcion)
         {
             string conexion = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString.ToString();
@@ -160,6 +177,13 @@ namespace Wcfdatos
                 throw new ArgumentException(ex.Message);
             }
         }
+        /// <summary>
+        /// Envia informacion de encuesta realizada
+        /// </summary>
+        /// <param name="pregunta">Codigo de la pregunta</param>
+        /// <param name="respuesta">Codigo de la respuesta seleccionada</param>
+        /// <param name="Codigo_EPS">Codigo de la EPS a encuesta</param>
+        /// <returns>respuesta a preguntas seleccionadas por el usuario </returns>
 
         public int CargueEncuesta(int pregunta, int respuesta, string Codigo_EPS)
         {

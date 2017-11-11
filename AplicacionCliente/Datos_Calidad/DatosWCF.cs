@@ -42,14 +42,22 @@ namespace DatosCalidad
             int respuestaEncuesta = servicio.CargueEncuesta(pregunta, respuesta,EPS);
             return respuestaEncuesta;
         }
-
+        /// <summary>
+        ///    Envia informacion general la encuesta realizada
+        /// </summary>
+        /// <param name="EPS">Codigo de la EPS a consultar</param>
+        /// <returns>Lista de categorias</returns>
         public List<CargaBarra> carga_Barra(string EPS)
         {
             var servicio = new Service1Client();
             var datos = servicio.Carga_Barra(EPS).ToList();
             return datos;
         }
-
+        /// <summary>
+        ///    Envia informacion general la encuesta realizada
+        /// </summary>
+        /// <param name="EPS">Codigo de la EPS a consultar</param>
+        /// <returns>Lista de subcategorias</returns>
         public List<CargaBarra> carga_torta(string EPS)
         {
             var servicio = new Service1Client();
